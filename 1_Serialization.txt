@@ -1,0 +1,54 @@
+#Serialization#
+
+Serialization is the process of converting an object into a stream of bytes in order to store the object or transmit it to
+memory, a database, or a file. Its main purpose is to save the state of an object in order to be able to recreate it when 
+needed. The reverse process is called deserialization.
+
+serialization is the process of translating data structures or object state into a format that can be stored (for example, in a file or memory buffer, or transmitted across a network connection link) and reconstructed later in the same or another computer environment. When the resulting series of bits is reread according to the serialization format, it can be used to create a semantically identical clone of the original object. For many complex objects, such as those that make extensive use of references, this process is not straightforward. Serialization of object-oriented objects does not include any of their associated methods with which they were previously inextricably linked.
+
+• A method of transferring data through the wires (messaging).
+• A method of storing data (in databases, on hard disk drives).
+• A method of remote procedure calls, e.g., as in SOAP.
+• A method for distributing objects, especially in component-based software engineering such as COM, CORBA, etc.
+• A method for detecting changes in time-varying data.
+
+
+$Language Support$
+
+• Java: Java provides automatic serialization which requires that the object be marked by implementing the 
+java.io.Serializable.
+• .Net Framework: .NET Framework has several serializers designed by Microsoft. There are also many serializers by third
+parties.
+• CFML: CFML allows data structures to be serialized to WDDX with the <cfwddx> tag and to JSON with the SerializeJSON()
+function.
+• OCaml: OCaml's standard library provides marshalling through the Marshal module and the Pervasives functions output_value
+and input_value. While OCaml programming is statically type-checked, uses of the Marshal module may break type guarantees, as
+there is no way to check whether an unmarshalled stream represents objects of the expected type. 
+• Perl: Several Perl modules available from CPAN provide serialization mechanisms, including Storable, JSON::XS 
+and FreezeThaw. Storable includes functions to serialize and deserialize Perl data structures to and from files or Perl
+scalars. In addition to serializing directly to files, Storable includes the freeze function to return a serialized copy of
+the data packed into a scalar, and thaw to deserialize such a scalar. 
+• C and C++: C and C++ do not provide direct support for serialization.
+• Python: The core general serialization mechanism is the pickle standard library module. 
+• PHP: PHP originally implemented serialization through the built-in serialize() and unserialize() functions.
+• R: R has the function dput which writes an ASCII text representation of an R object to a file or connection. A 
+representation can be read from a file using dget.
+• REBOL: REBOL will serialize to file (save/all) or to a string! (mold/all). Strings and files can be deserialized using the
+polymorphic load function. RProtoBuf provides cross-language data serialization in R, using protocol buffers.
+• Ruby: Ruby includes the standard module Marshal with 2 methods dump and load, akin to the standard Unix utilities dump and
+restore. These methods serialize to the standard class String, that is, they effectively become a sequence of bytes.
+• Smalltalk: In general, non-recursive and non-sharing objects can be stored and retrieved in a human readable form using 
+the storeOn:/readFrom: protocol. The storeOn: method generates the text of a Smalltalk expression which - when evaluated using
+readFrom: - recreates the original object.
+• Lisp: Generally a Lisp data structure can be serialized with the functions "read" and "print".
+• Haskell: In Haskell, serialization is supported for types that are members of the Read and Show type classes. Every type
+that is a member of the Read type class defines a function that will extract the data from the string representation of the
+dumped data. The Show type class, in turn, contains the show function from which a string representation of the object can 
+be generated.
+• Windows PowerShell: Windows PowerShell implements serialization through the built-in cmdlet Export-CliXML. Export-CliXML
+serializes .NET objects and stores the resulting XML in a file. To reconstitute the objects, use the Import-CliXML cmdlet,
+which generates a deserialized object from the XML in the exported file. Deserialized objects, often known as "property bags"
+are not live objects; they are snapshots that have properties, but no methods. Two dimensional data structures can also be 
+(de)serialized in CSV format using the built-in cmdlets Import-CSV and Export-CSV.
+• Julia: Julia implements serialization through the serialize() / deserialize() modules, intended to work within the same
+version of Julia, and/or instance of the same system image
