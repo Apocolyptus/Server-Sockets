@@ -8,4 +8,4 @@ Client and Server Sockets and their I/O streams
 
 1) [Serialization] (1_Serialization.txt)
 
-  • [Example] (hibernate.java)
+  • [Serializable in Java] (Serializable.java)
